@@ -1,0 +1,3 @@
+Current date and time: 
+2021-12-09 15:41:51.977758
+Connecting via SSH => show version
