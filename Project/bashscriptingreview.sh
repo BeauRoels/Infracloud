@@ -1,7 +1,7 @@
 #! /bin/bash
-IP_HOST=192.168.56.107
+IP_HOST=192.168.0.104 #your host ip address
 ping -c 5 $IP_HOST 
-INTERFACE=GigabitEthernet1 #Your ethernet interface
+INTERFACE= lo #Your ethernet interface
 USERNAME=cisco
 PASSWORD=cisco123! #standard cisco password
 status_code=$(curl -ks \
