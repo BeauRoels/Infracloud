@@ -1,9 +1,10 @@
 import requests
 import json
 
-iphost = "192.168.0.104"
+iphost = "192.168.56.101"
 interface = "GigabitEthernet1"
-username = "ikwildood"
+username = "cisco"
+password = "cisco123!"
 
 
 #Curl in python
