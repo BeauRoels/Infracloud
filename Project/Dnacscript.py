@@ -22,6 +22,7 @@ print("API Return Code: " + str(req.status_code))
 print('Request URI: ' + token_req_url)
 print("Username: " + DNAC_user)
 resp = req.text
+print(req.json())
 token = req.json()['Token']
 print("Received Token:")
 print(token)

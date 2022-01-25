@@ -1,9 +1,9 @@
 #! /bin/bash
-IP_HOST=192.168.0.104 #your host ip address
-ping -c 5 $IP_HOST 
-INTERFACE= lo #Your ethernet interface
-USERNAME=cisco
-PASSWORD=cisco123! #standard cisco password
+IP_HOST=sandboxdnac.cisco.com #your host ip address
+ping -c 3 $IP_HOST 
+INTERFACE=GigabitEthernet1 #Your ethernet interface
+USERNAME=devnetuser
+PASSWORD=Cisco123! #standard cisco password
 status_code=$(curl -ks \
 -w "%{http_code}" \
 -o /dev/null \
