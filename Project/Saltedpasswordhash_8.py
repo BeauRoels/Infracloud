@@ -1,6 +1,7 @@
 import pyotp
 import sqlite3
 import hashlib
+import os
 import uuid
 from flask import Flask, request
 app = Flask(__name__)
@@ -94,5 +95,27 @@ if __name__ == '__main__':
 
 ######################### salt hash ################
 
+#def generate_hash():
+ #   password = request.form['password'].encode()
+  #  salt = os.urandom(32)
+   # hashed = hashlib.sha256(password + salt)
+    #print(hashed.hexdigest())
 
+
+    ##########################################################
+@app.route('/signup/v3', methods=['GET', 'POST'])
+   def signup_v3():
+       conn = sqlite3.connect(db_name)
+       c = conn.cursor()
+        #tabel aanmaken
+       c.execute('''CREATE TABLE IF NOT EXISTS USER_HASH 
+       (USERNAME    TEXT PRIMARY KEY NOT NULL,
+        HASH    TEXT NOT NULL
+        SALT    TEXT NOT NULL);''')
+
+        conn.commit()
+
+        try:
+            salt = os.urandom(32)
+            hash_value = hashlib.sha256(request.form['password'].encode() + salt).hexdigest()
 
