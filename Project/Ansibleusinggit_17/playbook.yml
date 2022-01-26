@@ -1,0 +1,17 @@
+- hosts: belgie
+  vars: 
+    gitrepo: https://github.com/nikolayg/sample-python-api.git
+    destination: /home/ikwildood/Desktop/github/Infracloud/test
+  tasks:
+    - name: Install Git On Machine
+      become: yes
+      apt: 
+        name: git
+        state: latest
+
+    - name: Clone The Repository
+      git: 
+        repo: "{{ gitrepo }}"
+        dest: "{{ destination }}"
+        clone: yes
+        update: yes
